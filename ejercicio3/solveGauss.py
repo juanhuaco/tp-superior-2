@@ -1,9 +1,10 @@
+from tokenize import Double
 import numpy as np
 from sympy import *
 
-def solve_upper_triang(A,b):
+def solve_upper_triang(A,b, presicion):
     dim=A.shape[0]
-    sol=np.zeros_like(b)
+    sol=np.zeros_like(b, presicion)
     
     for i in range(dim):
         suma=b[dim-i-1]
@@ -15,7 +16,7 @@ def solve_upper_triang(A,b):
     return sol
 
 
-def solve_gauss(A,y): 
+def solve_gauss(A,y, presicion): 
     dim=A.shape[0]
 
     for i in range(dim):
@@ -26,7 +27,7 @@ def solve_gauss(A,y):
             y[k]-=y[i]*mult
 
 
-    x=solve_upper_triang(A,y)
+    x=solve_upper_triang(A,y, presicion)
     return x
 
 

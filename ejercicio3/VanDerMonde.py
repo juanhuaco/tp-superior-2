@@ -1,10 +1,10 @@
 import numpy as  np
 import sympy as smp
 
-def getVDMMatrix(n):
+def getVDMMatrix(n, presicion):
     #define shape of A and x
-    A = np.zeros((n, n))
-    x = np.zeros(n)
+    A = np.zeros((n, n), dtype=presicion)
+    x = np.zeros(n, dtype=presicion)
 
     for i in range(0, n):
         x[i] = smp.Rational(1, i+2)
@@ -15,14 +15,14 @@ def getVDMMatrix(n):
 
     return A
 
-def getVector(n):
-    v = np.zeros(n)
+def getVector(n, presicion):
+    v = np.zeros(n, dtype=presicion)
     for i in range(n):
         v[i] = n-i
     return v
 
-def getVanDerMonde(n):
-    A = getVDMMatrix(n)
-    b = getVector(n)
+def getVanDerMonde(n, presicion):
+    A = getVDMMatrix(n, presicion)
+    b = getVector(n, presicion)
     
     return A, b
