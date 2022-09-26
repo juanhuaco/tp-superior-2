@@ -1,0 +1,16 @@
+pasos a seguir ahora
+
+-determinar ejemplos -> 3
+-programar el newton y hacer jacobianos para los ejemplos
+-hacer un par de iteraciones
+-sacar las conclusiones
+
+-hacer la explicacion de la extension del metodo de la secante
+
+-jugar un chess
+
+
+x1 = np.array([-10, 1, -1], dtype='float32')
+x2 = np.array([1, 5, 1]   , dtype='float32')
+x3 = np.array([-10, 5, 1] , dtype='float32')
+x4 = np.array([1, 1, -1]  , dtype='float32')
